@@ -10,17 +10,17 @@
            address="raspi3b-ros" 
            user="jim"
            password="gicapin4"
-           env-loader="/home/jim/catkin_ws/.bashrc"
+           env-loader="/home/jim/catkin_ws/remote_env_loader.sh"
            ssh-port="22"
            timeout="20" />
 
+  <node machine="raspi3a-ros" name="astar" pkg="robotics" type="astar_node.py"/>
+  <node machine="raspi3a-ros" name="imu0" pkg="robotics" type="imu0_node.py"/>
+  <node machine="raspi3a-ros" name="imu1" pkg="robotics" type="imu1_node.py"/>
+  <node machine="raspi3a-ros" name="mag" pkg="robotics" type="mag_node.py"/>
 
-
-  <node machine="raspi3a-ros" name="astar" pkg="astar" type="astar_node.py"/>
-  <node machine="raspi3a-ros" name="imu0" pkg="imu" type="imu0_node.py"/>
-  <node machine="raspi3a-ros" name="imu1" pkg="imu" type="imu1_node.py"/>
-  <node machine="raspi3a-ros" name="mag" pkg="mag" type="mag_node.py"/>
-
+  <node machine="raspi3b-ros" name="lux" pkg="robotics" type="light_sensor_node.py"/>
+  <node name="teleop" pkg="robotics" type="romipi_teleop_key.py"/>
 
 
 </launch>
