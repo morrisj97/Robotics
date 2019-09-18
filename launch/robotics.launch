@@ -1,0 +1,26 @@
+<launch>
+  <machine name="raspi3a-ros"
+           address="raspi3a-ros"
+           user="jim"
+           password="gicapin4"
+           env-loader="/home/jim/catkin_ws/remote_env_loader.sh"
+           ssh-port="22"
+           timeout="20" />
+  <machine name="raspi3b-ros"
+           address="raspi3b-ros" 
+           user="jim"
+           password="gicapin4"
+           env-loader="/home/jim/catkin_ws/.bashrc"
+           ssh-port="22"
+           timeout="20" />
+
+
+
+  <node machine="raspi3a-ros" name="astar" pkg="astar" type="astar_node.py"/>
+  <node machine="raspi3a-ros" name="imu0" pkg="imu" type="imu0_node.py"/>
+  <node machine="raspi3a-ros" name="imu1" pkg="imu" type="imu1_node.py"/>
+  <node machine="raspi3a-ros" name="mag" pkg="mag" type="mag_node.py"/>
+
+
+
+</launch>

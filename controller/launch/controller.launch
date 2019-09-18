@@ -1,0 +1,8 @@
+<launch>
+  <node pkg="controller" type="astar_node.py" name="astar_node" output="screen" />
+  <node pkg="controller" type="imu0_node.py" name="imu0_node" output="screen" />
+  <node pkg="controller" type="imu1_node.py" name="imu1_node" output="screen" />
+  <node pkg="controller" type="mag_node.py" name="mag_node" output="screen" />
+  <node pkg="controller" type="light_sensor_node.py" name="lux_node" output="screen" />
+  <node pkg="controller" type="romipi_teleop_key.py" name="romipi_teleop_key" output="screen" />
+</launch>
